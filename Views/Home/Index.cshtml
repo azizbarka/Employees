@@ -1,0 +1,36 @@
+﻿@inject Employees.Repository.ApiRepository api;
+@{
+    var emps = await api.GetAllEmployees();
+    ViewBag.Title = "الموظفين";
+    ViewBag.TitleIcon = "fa-solid fa-people-group";
+    ViewBag.ColWidth = 8;
+}
+
+@if (emps.Count == 0)
+{
+    <h4>لم يتم تسجيل الموظفين</h4>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">الإسم</th>
+                <th scope="col">الجوال</th>
+                <th scope="col">البريد</th>
+                <th scope="col">الوظيفة</th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            @{
+                foreach (var emp in emps)
+                {
+                    <partial name="_EmployeeRow" model="emp" />
+                }
+            }
+        </tbody>
+    </table>
+}
+

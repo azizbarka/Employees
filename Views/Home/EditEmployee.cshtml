@@ -1,0 +1,17 @@
+﻿@{
+    ViewBag.Title = "تعديل موظف";
+    ViewBag.TitleIcon = "fa-solid fa-user-pen";
+    ViewBag.IsEdit = true;
+    ViewBag.ColWidth = 6;
+}
+
+@section message{
+    @await Component.InvokeAsync("Message", new { content = "تم تعديل معلومات الموظف", isVisible = ViewBag.IsSuccess == true })}
+
+<form method="post" enctype="multipart/form-data" asp-action="EditEmployee">
+
+    <partial name="_EmployeeForm" />
+    <button type="submit" class="btn btn-success w-25 mb-3">تعديل</button>
+    <a type="submit" asp-action="index" class="btn btn-secondary w-25 mb-3">إلغاء</a>
+</form>
+

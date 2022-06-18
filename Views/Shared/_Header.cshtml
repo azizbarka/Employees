@@ -1,0 +1,40 @@
+﻿
+@{ 
+    string IsPointerTab(int id) => ViewBag.SelectedPage == id ? "nav-item-pointer" : "nav-item-selection";
+    string IsActiveTab(int id) => ViewBag.SelectedPage == id ? "active" : "";
+}
+<header>
+    <nav class="navbar navbar-expand-lg navbar-dark m-bg-primary  m-shadow-bottom ">
+        <div class="container-fluid">
+            <!--Logo-->
+            <a class="navbar-brand logo" href="#">
+                <div class="d-flex align-middle ms-2">
+                    <i class="fa-solid fa-person anim-slide-down anim-delay-2"></i>
+                    <i class="fa-solid fa-person anim-slide-down anim-delay-3"></i>
+                    <i class="fa-solid fa-person anim-slide-down anim-delay-4"></i>
+                </div>
+                <h3 class="anim-slide-up anim-delay-7 fw-bold mt-2">إدارة الموظفين</h3>
+            </a>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <!--Nav links-->
+                <ul class="navbar-nav">
+                    <li class="nav-item @IsPointerTab(1)">
+                        <a class="nav-link @IsActiveTab(1)" asp-action="Index"  ><i class="fa-solid fa-people-group"></i> الموظفين</a>
+                    </li>
+                    <li class="nav-item @IsPointerTab(2)">
+                        <a class="nav-link @IsActiveTab(2)" asp-action="AddEmployee"><i class="fa-solid fa-person-circle-plus"></i> إضافة موظف </a>
+                    </li>
+                    <li class="nav-item @IsPointerTab(3)">
+                        <a class="nav-link @IsActiveTab(3)" href="#" ><i class="fa-solid fa-person-circle-question"></i> مساعدة </a>
+                    </li>
+
+                </ul>
+
+            </div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+        </div>
+</header>

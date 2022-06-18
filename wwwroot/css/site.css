@@ -1,0 +1,264 @@
+﻿:root {
+    --primary-color: #2466d0;
+    --green-color: rgb(0, 161, 62);
+    --shadow-bottom: 0 3px 5px rgba(101, 101, 101, 0.504);
+    --hover-shadow: box-shadow: 0 0 5px rgba(0, 0, 0, 0.396);
+}
+
+* {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.m-bg-primary {
+    background: var(--primary-color);
+}
+
+.m-color-primary {
+    color: var(--primary-color);
+}
+
+.m-shadow-bottom {
+    box-shadow: var(--shadow-bottom);
+}
+
+.logo {
+    display: flex;
+    padding: 0% !important;
+    position: relative;
+    align-items: center;
+    justify-content: space-around;
+}
+
+    .logo::before {
+        position: absolute;
+        content: '';
+        width: 150%;
+        height: 150%;
+        background-color: rgba(245, 245, 245, 0.141);
+    }
+
+.anim-slide-down {
+    transform: translateY(-100%);
+    animation-name: slide-y;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+    animation-duration: 0.3s;
+}
+
+.anim-slide-down-opacity {
+    opacity: 0;
+    transform: translateY(-100%);
+    animation-name: slide-y;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+    animation-duration: 0.3s;
+}
+
+.form-control {
+    box-shadow: none !important;
+}
+
+.anim-slide-up {
+    transform: translateY(100%);
+    animation-name: slide-y;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+    animation-duration: 0.3s;
+    opacity: 0;
+}
+
+.anim-grow-left {
+    width: 0%;
+    animation-name: grow-width;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+    animation-duration: 0.8s;
+}
+
+.anim-delay-1 {
+    animation-delay: 0.1s;
+}
+
+.anim-delay-2 {
+    animation-delay: 0.2s;
+}
+
+.anim-delay-3 {
+    animation-delay: 0.3s;
+}
+
+.anim-delay-4 {
+    animation-delay: 0.4s;
+}
+
+.anim-delay-5 {
+    animation-delay: 0.5s;
+}
+
+.anim-delay-6 {
+    animation-delay: 0.6s;
+}
+
+.anim-delay-7 {
+    animation-delay: 0.7s;
+}
+
+.anim-delay-8 {
+    animation-delay: 0.8s;
+}
+
+.anim-delay-9 {
+    animation-delay: 0.9s;
+}
+
+.anim-delay-10 {
+    animation-delay: 1s;
+}
+
+.logo-p1 {
+    transform: rotateZ(0);
+}
+
+.logo-p2 {
+    margin-left: 0;
+    transform: rotateZ(-35deg);
+}
+
+.logo:hover .logo-p1 {
+    margin-left: 3px;
+    transform: rotateZ(50deg)
+}
+
+.m-line-primary {
+    width: 0%;
+    height: 1px;
+    background-image: linear-gradient(45deg,#fff,#2466d0 90%);
+}
+
+.nav-item {
+    margin: 0 30px;
+    padding: 0 10px;
+    position: relative;
+    z-index: 0;
+}
+
+.nav-item-selection::after {
+    visibility: visible;
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translate(-50%, -2px) rotateZ(45deg);
+    width: 50px;
+    height: 50px;
+    content: '';
+    z-index: -1;
+    border-radius: 0;
+    background-color: var(--primary-color);
+    border-radius: 30px;
+    transition: 0.5s;
+}
+
+body {
+    background-color: whitesmoke;
+}
+
+.nav-item-selection:hover::after {
+    border-radius: 0;
+    transform: translate(-50%, 48%) rotateZ(45deg);
+    box-shadow: 1px 2px 0 0 rgba(0, 0, 0, 0.2);
+}
+
+.nav-item-pointer::before {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translate(-50%, 48%) rotateZ(45deg);
+    width: 50px;
+    height: 50px;
+    content: '';
+    z-index: -1;
+    border-radius: 0;
+    background-color: var(--primary-color);
+    border-radius: 0;
+}
+
+.navbar-toggler {
+    border: 0 !important;
+    box-shadow: none !important;
+}
+
+    .navbar-toggler:hover {
+        color: white;
+    }
+
+.m-btn {
+    border-radius: 10px;
+    padding: 7px 10px;
+    outline: none;
+    border: none;
+    color: white;
+}
+
+.m-btn-primary {
+    background-color: var(--primary-color);
+    box-shadow: 0 0 0px black;
+}
+
+.m-btn:hover {
+    box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.34);
+}
+
+.bg-primary-graident {
+    background: linear-gradient(0deg, var(--primary-color) 50%, #2d88ff);
+}
+
+.m-btn-primary:hover {
+    transition: 0.5s;
+    background: #2d88ff;
+}
+
+.m-btn-primary:active {
+    background-color: #173679;
+}
+
+.m-btn-green {
+    background-color: var(--green-color);
+}
+
+    .m-btn-green:hover {
+        transition: 0.5s;
+        background: #14bb38;
+    }
+
+    .m-btn-green:active {
+        background-color: #0a511e;
+    }
+
+.field-info {
+    color: white;
+    background-color: #2466d0;
+    padding: 2px 10px;
+    vertical-align: middle;
+    text-align: right;
+    border-radius: 50px;
+}
+
+
+@keyframes slide-y {
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes grow-width {
+    100% {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width :992px) {
+    .nav-item::after {
+        display: none;
+    }
+}

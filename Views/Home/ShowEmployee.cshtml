@@ -1,0 +1,45 @@
+﻿@model Employee
+@{
+    ViewBag.Title = "معلومات الموظف";
+    ViewBag.TitleIcon = "fa-solid fa-user";
+    ViewBag.ColWidth = 6;
+}
+
+
+<div class="row mb-3">
+    <div class="col">
+        <h5 class="fw-bold ms-3 text-secondary">الإسم</h5>
+        <span class="field-info">@(Model.FirstName + " " + Model.LastName)</span>
+    </div>
+    <div class="col">
+        <h5 class="fw-bold ms-3 text-secondary">تاريخ الميلاد</h5>
+        <span class="field-info font-weight-lighter">@Model.Birth.ToString("dd/MM/yyyy")</span>
+    </div>
+    <div class="col">
+        <h5 class="fw-bold ms-3 text-secondary">العمر</h5>
+        <span class="field-info font-weight-lighter">@(DateTime.Now.Subtract(Model.Birth).Days/360)  سنة </span>
+    </div>
+    <div class="col">
+        <h5 class="fw-bold ms-3 text-secondary">رقم الجوال</h5>
+        <span class="field-info font-weight-lighter">@Model.MobileNo </span>
+    </div>
+</div>
+
+<div class="row mb-3">
+    <div class="col">
+        <h5 class="fw-bold ms-3 text-secondary">البريد الإلكتروني</h5>
+        <span class="field-info">@Model.Email</span>
+    </div>
+    @if (!string.IsNullOrEmpty(Model.Address))
+    {
+        <div class="col">
+            <h5 class="fw-bold ms-3 text-secondary">العنوان</h5>
+            <span class="field-info font-weight-lighter">@Model.Address </span>
+        </div>
+    }
+    <div class="col">
+        <h5 class="fw-bold ms-3 text-secondary">الوظيفة </h5>
+        <span class="field-info">@Model.JobTitle</span>
+    </div>
+
+</div>

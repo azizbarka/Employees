@@ -1,0 +1,16 @@
+﻿@model Employee;
+<tr>
+    <td>@Model.Id</td>
+    <td>@(Model.FirstName + " " + Model.LastName)</td>
+    <td>@Model.MobileNo</td>
+    <td>@Model.Email</td>
+    <td >@Model.JobTitle</td>
+    <td>
+        <div class="button-group float-start">
+            <a asp-action="ShowEmployee" asp-route-id="@Model.Id" title="عرض"  class="btn btn-secondary"><i class="fa-solid fa-user"></i></a>
+            <a asp-action="EditEmployee" asp-route-id="@Model.Id" title="تعديل" class="btn btn-primary"><i class="fa-solid fa-user-pen"></i></a>
+            <a asp-action="DeleteEmployee" asp-route-id="@Model.Id"  data-toggle="modal" data-target="#exampleModal" title="إزالة" class="btn btn-danger"><i class="fa-solid fa-trash-can"></i></a>
+        </div>
+    </td>
+
+</tr>

@@ -1,0 +1,15 @@
+﻿@{
+    ViewBag.Title = "إضافة موظف";
+    ViewBag.TitleIcon = "fa-solid fa-person-circle-plus";
+    ViewBag.IsEdit = false;
+    ViewBag.ColWidth = 6;
+}
+
+@section message{ 
+    @await Component.InvokeAsync("Message", new { content = "تم حفظ الموظف", isVisible = ViewBag.IsSuccess == true })}
+
+    <form method="post" enctype="multipart/form-data" asp-action="addEmployee">
+        <partial name="_EmployeeForm" enctype="multipart/form-data" />
+        <button type="submit" class="btn btn-success w-25 mb-3">حفظ</button>
+    </form>
+
